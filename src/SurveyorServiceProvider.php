@@ -13,7 +13,7 @@ use Waygou\Surveyor\Observers\PolicyObserver;
 use Waygou\Surveyor\Observers\ProfileObserver;
 use Waygou\Surveyor\Observers\ScopeObserver;
 
-class ServiceProvider extends BaseServiceProvider
+class SurveyorServiceProvider extends BaseServiceProvider
 {
     public function boot()
     {

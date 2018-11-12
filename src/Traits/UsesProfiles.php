@@ -2,9 +2,9 @@
 
 namespace Waygou\Surveyor\Traits;
 
-use Waygou\Surveyor\Models\Profile;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
+use Waygou\Surveyor\Models\Profile;
 
 trait UsesProfiles
 {

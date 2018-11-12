@@ -129,7 +129,7 @@ class SurveyorProvider
             $repository = static::retrieve();
             $path = "policy.{$policy}.{$action}";
             if (static::contains($path)) {
-                return (bool)data_get($repository, $path);
+                return (bool) data_get($repository, $path);
             } else {
                 return false;
             }

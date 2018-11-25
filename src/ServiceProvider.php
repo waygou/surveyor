@@ -29,7 +29,7 @@ class ServiceProvider extends BaseServiceProvider
         if (!class_exists('CreateSurveyorSchema')) {
             $timestamp = date('Y_m_d_His', time());
             $this->publishes([
-                __DIR__.'/../Database/Migrations/create_surveyor_schema.php.stub' => $this->app->databasePath()."/migrations/{$timestamp}_create_surveyor_schema.php",
+                __DIR__.'/../database/migrations/create_surveyor_schema.php.stub' => $this->app->databasePath()."/migrations/{$timestamp}_create_surveyor_schema.php",
             ], 'surveyor-create-schema');
         }
 

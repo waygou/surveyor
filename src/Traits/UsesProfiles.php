@@ -2,9 +2,9 @@
 
 namespace Waygou\Surveyor\Traits;
 
-use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 use Waygou\Surveyor\Models\Profile;
+use Spatie\Permission\Models\Permission;
 
 trait UsesProfiles
 {
@@ -55,7 +55,7 @@ trait UsesProfiles
             $electedProfile = Profile::where('code', $profile)->first();
 
             // Profile exists and not assigned to user?
-            if (!is_null($electedProfile) && !$this->hasProfile($profile)) {
+            if (! is_null($electedProfile) && ! $this->hasProfile($profile)) {
                 // Assign both role and permissions defined for this user profile.
                 // Into the Spatie Permissions.
                 $this->assignRole(Role::find([$electedProfile->role_id])->first()->name);

@@ -2,16 +2,16 @@
 
 namespace Waygou\Surveyor;
 
-use Illuminate\Support\Facades\Event;
-use Illuminate\Support\ServiceProvider as BaseServiceProvider;
-use Waygou\Surveyor\Listeners\BootSurveyor;
-use Waygou\Surveyor\Listeners\FlushSurveyor;
+use Waygou\Surveyor\Models\Scope;
 use Waygou\Surveyor\Models\Policy;
 use Waygou\Surveyor\Models\Profile;
-use Waygou\Surveyor\Models\Scope;
+use Illuminate\Support\Facades\Event;
+use Waygou\Surveyor\Listeners\BootSurveyor;
+use Waygou\Surveyor\Listeners\FlushSurveyor;
+use Waygou\Surveyor\Observers\ScopeObserver;
 use Waygou\Surveyor\Observers\PolicyObserver;
 use Waygou\Surveyor\Observers\ProfileObserver;
-use Waygou\Surveyor\Observers\ScopeObserver;
+use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 class ServiceProvider extends BaseServiceProvider
 {
@@ -26,7 +26,7 @@ class ServiceProvider extends BaseServiceProvider
 
     protected function registerPublishing()
     {
-        if (!class_exists('CreateSurveyorSchema')) {
+        if (! class_exists('CreateSurveyorSchema')) {
             $timestamp = date('Y_m_d_His', time());
             $this->publishes([
                 __DIR__.'/../database/migrations/create_surveyor_schema.php.stub' => $this->app->databasePath()."/migrations/{$timestamp}_create_surveyor_schema.php",

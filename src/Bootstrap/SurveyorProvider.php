@@ -32,7 +32,7 @@ class SurveyorProvider
             }
         }
 
-        if (Auth::id() != null && !static::isActive()) {
+        if (Auth::id() != null && ! static::isActive()) {
             $repository = [];
             $repository['scopes'] = [];
             $repository['policies'] = [];
@@ -40,7 +40,7 @@ class SurveyorProvider
 
             data_set($repository, 'user.id', Auth::id());
 
-            if (!is_null(me()->profiles)) {
+            if (! is_null(me()->profiles)) {
                 foreach (me()->profiles as $profile) {
                     $repository['profiles'][$profile->code] = ['id'   => $profile->id,
                                                                'code' => $profile->code,

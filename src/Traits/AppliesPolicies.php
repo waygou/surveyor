@@ -2,8 +2,8 @@
 
 namespace Waygou\Surveyor\Traits;
 
-use Illuminate\Auth\Access\HandlesAuthorization;
 use Waygou\Surveyor\Bootstrap\SurveyorProvider;
+use Illuminate\Auth\Access\HandlesAuthorization;
 
 trait AppliesPolicies
 {

@@ -2,9 +2,9 @@
 
 namespace Waygou\Surveyor\Abstracts;
 
-use Hyn\Tenancy\Traits\UsesTenantConnection;
 use Waygou\Helpers\Traits\CanSaveMany;
 use Illuminate\Database\Eloquent\Model;
+use Hyn\Tenancy\Traits\UsesTenantConnection;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 abstract class SurveyorModel extends Model
